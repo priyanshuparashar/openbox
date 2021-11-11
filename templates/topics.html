@@ -1,0 +1,18 @@
+{% block content %}
+<h3 >browse topics </h3>
+
+<hr>
+<ul class="list-unstyled ">
+    <a href="{% url 'home' %}"><li class="text4">ALL <span class="pull-right text2">{{topic.count}}</span></li></a>
+{% for e in topic %}
+
+<a href="{% url 'home' %}?q={{e.name}}">
+    <li class="text4">{{e}} <span class="pull-right text2">{{e.rooms_set.all.count}}</span></li>
+</a>
+<!-- <h4><a href="{% url 'home' %}?q={{e.name}}">{{e}}</a></h4> -->
+
+{% endfor %}
+</ul>
+
+
+{% endblock %}

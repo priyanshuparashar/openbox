@@ -1,0 +1,23 @@
+{% block content %}
+{% for l in mylist %}
+
+<div class="card bg-transparent ">
+    <a  href="/userprofile/{{l.host.id}}">
+        <h5 class="card-header text1">Featured <span class="text2">@{{l.host.username}}</span></h5>
+    </a>
+    <div class="card-body">
+        <a href="/room/{{l.id}}">
+            <h5 class="card-title text1">BOX name: <span class="text4"> {{l.name}} <span/></h5>
+        </a>
+        <p class="card-text text1">topic: {{l.topic}}</p>
+        {% if request.user == l.host %}
+        <a href="{% url 'updateroom' l.id %}" class="btn btn-primary">update</a>
+        <a href="{% url 'deleteroom' l.id %}" class="btn btn-danger">Delete</a>
+        {% endif %}
+        <br>
+
+    </div>
+
+</div>
+{% endfor %}
+{% endblock %}

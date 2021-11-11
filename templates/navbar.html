@@ -1,0 +1,70 @@
+
+{% block content %}
+<!-- <nav class="navbar navbar-dark" style="background-color: #0dcaf0; ">
+    <a href="{% url 'home' %}" class="navbar-brand cus">Helix</a>
+   {% if request.user.is_authenticated %}
+   <a href="{% url 'logout' %}" class="">LOGOUT  {{user}}</a>
+
+   
+    {% else %}
+    <a href="{% url 'loginr' %}" class="">LOGIN</a>
+    {% endif %}
+    <form class="form-inline gus" method="GET" action="{% url 'home' %}">
+        <input class="form-control mr-sm-2 " type="text" name="q" placeholder="Search..."" aria-label="Search">
+        
+    </form>
+</nav> -->
+<nav class="mb-4 navbar navbar-expand-lg navbar-dark" style="background-color: #0dcaf0;">
+    <a class="navbar-brand font-bold cus" href="{% url 'home' %}">Helix</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+        aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSuapportedContent-4">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'contact' %}"><i class="fa fa-envelope"></i> Contact <span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-gear"></i> Settings</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{user}} </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                    
+                    
+                    <a class="dropdown-item" href="/userprofile/{{user.id}}">My account</a>
+                    {% if request.user.is_authenticated %}
+                    <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+                    {% else %}
+                    
+                    <a class="dropdown-item" href="{% url 'loginr' %}">LOGIN</a>
+                    {% endif %}
+
+                    
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline " method="GET" action="{% url 'home' %}">
+            <input class="form-control mr-sm-2 gus" type="text" name="q" placeholder="Search..."" aria-label=" Search">
+        
+        </form>
+    </div>
+</nav>
+
+{% endblock %}
+
+
+<!-- <nav>
+    <h1 style="color: blue;">company logo</h1>
+    <h3><a href="{% url 'loginr' %}">LOGIN</a></h3>
+</nav> -->
+<!-- <form method="GET" action="{% url 'home' %}">
+    <input type="text" name="q" placeholder="Search...">
+
+    <!-- <a href="#" class="search-btn">
+                <i class="fas fa-search"></i> -->
+    <!-- </a> -->
+<!-- </form> --> 

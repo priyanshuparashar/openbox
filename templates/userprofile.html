@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container">
+    <h1 class="text4"> USER NAME: {{user.username}}</h1>
+    <h3 class="text4"> NO of rooms @{{user.username}} created:  {{count}}</h3>
+    <div class="row">
+        <div class="col-sm">
+            {% include 'topics.html' %}
+
+        </div>
+        <div class="col-sm-5">
+           
+            {% include 'feed.html' %}
+        </div>
+        <div class="col-sm">
+          
+            {% include 'act.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

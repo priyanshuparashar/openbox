@@ -1,0 +1,26 @@
+{%  block content %}
+<br>
+<hr>
+
+<h3 class="text-center text1">Activity feed</h3>
+{% for message in message %}
+<!-- <small>@{{message.user}} -<small>{{message.created|timesince }}, ago </small> </small>
+<p>{{message.body}}</p>
+<p>{{message.room}}</p>
+<hr> -->
+<div class="d-flex justify-content-center py-2">
+    <div class="second py-2 px-2"> <span class="text1">BOX: {{message.room}}<br> "{{message.body}}"</span>
+        <div class="d-flex justify-content-between py-1 pt-2">
+            <div><span class="text2">@{{message.user}}</span></div>
+            <div><span class="text3">{{message.created|timesince }}, ago</span></div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+    
+
+    
+
+{% endblock %}

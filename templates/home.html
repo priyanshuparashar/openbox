@@ -1,0 +1,93 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+    
+
+
+
+</style>
+
+<div class="container">
+    <br>
+    <br>
+    <div class="row"> 
+        
+        <div class="col-sm">
+        
+    {% include 'topics.html' %}
+        </div>
+       
+        
+   
+
+
+  <div class="col-sm-5 vl">
+       <div>
+        <a href="{% url 'createroom' %}"><button type="button" class="btn btn-info"><h4>CREATE ROOM</h4></button></a>
+        
+        <hr>
+        {% include 'feed.html' %}
+        <!-- {% for l in mylist %}
+        <div class="card bg-dark text-white">
+           <a href="/userprofile/{{l.host.id}}"> <h5 class="card-header">Featured @{{l.host.username}}</h5></a>
+            <div class="card-body">
+                <a href="/room/{{l.id}}"><h5 class="card-title">{{l.id}}--{{l.name}}</h5></a>
+                <p class="card-text">topic:{{l.topic}}</p>
+                {% if request.user == l.host %}
+                <a href="{% url 'updateroom' l.id %}" class="btn btn-primary">update</a>
+                <a href="{% url 'deleteroom' l.id %}" class="btn btn-danger">Delete</a>
+                {% endif %}
+                <br>
+        
+            </div>
+            
+        </div>
+        {% endfor %} -->
+        </div>
+        </div>
+        <!-- activity feed -->
+        <div class="col-sm vl">
+         
+            {% include 'act.html' %}
+        </div>
+
+       
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <!-- <br>
+        <br>
+        
+        {% for l in mylist %}
+        <h4><a href="{% url 'updateroom' l.id %}">EDIT</a></h4>
+        <h5><a href="{% url 'deleteroom' l.id %}">DELETE</a></h5>
+        <span>@{{l.host.username}}</span>
+       <a href="/room/{{l.id}}"> <h3>{{l.id}} </a>--{{l.name}}</h3>
+       <br>
+       <small>topic:{{l.topic}}</small>
+       <hr>
+
+        {% endfor %} -->
+      
+   
+</div>
+</div>
+{% endblock %}
+
+
+
+

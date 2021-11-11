@@ -1,0 +1,80 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>boxes</h1>
+<div class="card bg-dark text-white" style="width: 30rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{room}}</h5>
+        <p class="card-text">{{desc}}</p>
+        </div>
+        </div>
+        <h3>Chat box</h3>
+        {% for conv in conv %}
+       
+        
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="widget panel">
+                        <div class="panel-body">
+                           
+                                <i class="fa fa-twitter text-info pull-right"></i>
+                            </h4>
+                            <hr>
+                            <ul class="list-table">
+                                <li style="width:70px;">
+                                    <img class="img-circle img-bordered-primary"
+                                        src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" width="65px"
+                                        height="65px">
+                                </li>
+                                <li class="text-left">
+                                    <h5 class="semibold ellipsis nm">{{conv.user}}</h5>
+                                    <p class="text-muted nm">5k followers</p>
+                                </li>
+                                <li class="text-right">
+                                    <button type="button" class="btn btn-sm btn-success">Follow</button>
+                                </li>
+                            </ul>
+                        </div>
+        
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <p class="nm">{{conv}}</p>
+                                <small class="text-muted">{{conv.created|timesince }}, ago</small>
+        
+                        </ul>
+                    </div>
+                </div>
+        
+        
+        
+            </div>
+            </div>
+        
+        {% endfor %}
+        {% if request.user.is_authenticated %}
+        <br>
+        <div class="input-group row ">
+            <div class="col-sm-5 " style="margin-left: 20px;">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <!-- <input type="text" required/> -->
+                <input type="text" name="body" placeholder="your messages here" class="form-control border border-info"
+                    aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
+            </form>
+            </div>
+
+        </div>
+        {% endif %}
+      
+
+        
+
+
+
+ 
+
+
+
+{% endblock %}
